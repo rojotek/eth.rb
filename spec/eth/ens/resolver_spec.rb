@@ -3,7 +3,7 @@ require "spec_helper"
 describe Ens::Resolver do
 
   # public rpc
-  let(:drpc_api) { "https://eth.drpc.org" }
+  let(:drpc_api) { "https://rpc.ankr.com/eth" }
   subject(:drpc_mainnet) { Client.create drpc_api }
   let(:resolver) { Ens::Resolver.new(drpc_mainnet) }
 
