@@ -124,6 +124,7 @@ describe Client do
 
     context "when nonce manually set" do
       it "raises exception when nonce incorrect" do
+        geth_http.transfer_and_wait(another_key.address, 69 * Unit::ETHER, legacy: true)
         expect {
           geth_http.transfer(another_key.address, 69 * Unit::ETHER, legacy: true, nonce: 0)
         }.to raise_error(IOError, /nonce too low: next nonce [0-9]+, tx nonce [0-9]+/)
